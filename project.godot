@@ -11,5 +11,18 @@ config_version=5
 [application]
 
 config/name="Hackaton 42"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=200
+window/size/viewport_height=300
+window/size/window_width_override=600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
