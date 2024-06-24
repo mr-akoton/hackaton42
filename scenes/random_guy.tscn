@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hu2ntwp5tdf"]
+
+[ext_resource type="Script" path="res://scenes/random_guy.gd" id="1_hvbot"]
+[ext_resource type="Texture2D" uid="uid://dwn5c88s52kgb" path="res://img/people.png" id="2_q83qm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rari"]
+
+[node name="RandomGuy" type="CharacterBody2D"]
+script = ExtResource("1_hvbot")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3rari")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_q83qm")
+hframes = 4
+vframes = 4
