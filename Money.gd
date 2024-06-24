@@ -11,6 +11,16 @@ func update_sprite() -> void:
 		sprite.frame = 1
 	elif value <= 500:
 		sprite.frame = 2
+	elif value <= 1000:
+		sprite.frame = 3
+	elif value <= 2000:
+		sprite.frame = 4
+	elif value <= 5000:
+		sprite.frame = 5
+	elif value <= 10000:
+		sprite.frame = 6
+	else:
+		sprite.frame = 7
 
 func _ready():
 	update_sprite()

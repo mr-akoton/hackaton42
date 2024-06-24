@@ -1,39 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://blynwmy4d7a8"]
+[gd_scene load_steps=2 format=3 uid="uid://blynwmy4d7a8"]
 
-[ext_resource type="PackedScene" uid="uid://drcamssgrsoxp" path="res://scenes/bus.tscn" id="1_156fh"]
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_hl0o4"]
-[ext_resource type="PackedScene" uid="uid://c3hu2ntwp5tdf" path="res://scenes/random_guy.tscn" id="3_3sjck"]
-[ext_resource type="PackedScene" uid="uid://bw6sv3r3fc7ig" path="res://scenes/money.tscn" id="4_wo5ye"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_hl0o4")
-
-[node name="Bus" parent="." instance=ExtResource("1_156fh")]
-
-[node name="Camera2D" type="Camera2D" parent="Bus"]
-position = Vector2(59, 94)
-
-[node name="RandomGuys" type="Node2D" parent="."]
-position = Vector2(56, 160)
-
-[node name="Guy" parent="RandomGuys" instance=ExtResource("3_3sjck")]
-
-[node name="PlayerMoney" type="Node2D" parent="."]
-
-[node name="Money" parent="PlayerMoney" instance=ExtResource("4_wo5ye")]
-position = Vector2(-23, 11)
-
-[node name="Money2" parent="PlayerMoney" instance=ExtResource("4_wo5ye")]
-position = Vector2(-23, 33)
-value = 200
-
-[node name="Money3" parent="PlayerMoney" instance=ExtResource("4_wo5ye")]
-position = Vector2(-23, 55)
-value = 500
-
-[node name="Timers" type="Node" parent="."]
-
-[node name="TravelTime" type="Timer" parent="Timers"]
-wait_time = 30.0
-
-[connection signal="timeout" from="Timers/TravelTime" to="." method="_on_travel_time_timeout"]

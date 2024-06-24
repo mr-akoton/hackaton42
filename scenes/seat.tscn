@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvg0p7d35hns6"]
+
+[ext_resource type="Script" path="res://scenes/seat.gd" id="1_hfvki"]
+[ext_resource type="Texture2D" uid="uid://cvxrjjteaukt1" path="res://img/seat.png" id="1_uuvju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mic4"]
+size = Vector2(12, 12)
+
+[sub_resource type="Curve2D" id="Curve2D_68cps"]
+
+[node name="Seat" type="Node2D"]
+script = ExtResource("1_hfvki")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_uuvju")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0mic4")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_68cps")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

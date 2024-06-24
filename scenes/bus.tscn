@@ -1,96 +1,87 @@
-[gd_scene load_steps=7 format=3 uid="uid://drcamssgrsoxp"]
+[gd_scene load_steps=4 format=3 uid="uid://drcamssgrsoxp"]
 
-[ext_resource type="Texture2D" uid="uid://b88867546f8ts" path="res://img/house.png" id="1_idkbc"]
 [ext_resource type="Script" path="res://scenes/bus.gd" id="1_jakce"]
-[ext_resource type="Texture2D" uid="uid://b2kkg1plck2ig" path="res://img/furniture.png" id="2_ylg13"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4e741"]
-texture = ExtResource("2_ylg13")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukxxb"]
-texture = ExtResource("1_idkbc")
-1:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_36ysu"]
-sources/0 = SubResource("TileSetAtlasSource_4e741")
-sources/1 = SubResource("TileSetAtlasSource_ukxxb")
+[ext_resource type="Texture2D" uid="uid://chcd1ftdagaov" path="res://img/floor.png" id="2_y77qp"]
+[ext_resource type="PackedScene" uid="uid://bvg0p7d35hns6" path="res://scenes/seat.tscn" id="3_fuyc8"]
 
 [node name="Bus" type="Node2D"]
 script = ExtResource("1_jakce")
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_36ysu")
-format = 2
-layer_0/name = "ground"
-layer_0/tile_data = PackedInt32Array(65539, 65537, 2, 65540, 65537, 2, 65538, 65537, 2, 65537, 65537, 2, 131073, 65537, 2, 131074, 65537, 2, 131075, 65537, 2, 131076, 65537, 2, 196610, 65537, 2, 196609, 65537, 2, 196611, 65537, 2, 196612, 65537, 2, 262148, 65537, 2, 262147, 65537, 2, 262146, 65537, 2, 262145, 65537, 2, 327681, 65537, 2, 327682, 65537, 2, 327683, 65537, 2, 327684, 65537, 2, 393220, 65537, 2, 393219, 65537, 2, 393218, 65537, 2, 393217, 65537, 2, 458753, 65537, 2, 458754, 65537, 2, 458755, 65537, 2, 458756, 65537, 2, 524292, 65537, 2, 524291, 65537, 2, 524290, 65537, 2, 524289, 65537, 2, 655365, 65537, 2, 655364, 65537, 2, 655363, 65537, 2, 655362, 65537, 2, 655361, 65537, 2, 589825, 65537, 2, 589826, 65537, 2, 589827, 65537, 2, 589828, 65537, 2, 589829, 65537, 2, 524293, 65537, 2, 458757, 65537, 2, 393221, 65537, 2, 327685, 65537, 2, 262149, 65537, 2, 196613, 65537, 2, 131077, 65537, 2, 65541, 65537, 2, 720899, 65537, 2)
-layer_1/name = "wall"
-layer_1/tile_data = PackedInt32Array(0, 1, 1, 6, 131073, 1, 720902, 131073, 3, 720896, 1, 3, 589824, 1, 2, 655360, 1, 2, 524288, 1, 2, 458752, 1, 2, 393216, 1, 2, 327680, 1, 2, 262144, 1, 2, 196608, 1, 2, 131072, 1, 2, 65536, 1, 2, 655366, 131073, 2, 589830, 131073, 2, 524294, 131073, 2, 458758, 131073, 2, 393222, 131073, 2, 327686, 131073, 2, 262150, 131073, 2, 196614, 131073, 2, 131078, 131073, 2, 65542, 131073, 2, 1, 65537, 1, 2, 65537, 1, 3, 65537, 0, 4, 65537, 1, 5, 65537, 1, 720897, 65537, 3, 720898, 65537, 3, 720899, 196609, 1, 720900, 65537, 3, 720901, 65537, 3)
+[node name="ExitPoint" type="Marker2D" parent="."]
+position = Vector2(56, 240)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(56, 128)
+texture = ExtResource("2_y77qp")
+
+[node name="Seats" type="Node2D" parent="."]
+position = Vector2(56, 128)
+
+[node name="Seat" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, -64)
+
+[node name="Seat2" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, -64)
+
+[node name="Seat3" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, -64)
+
+[node name="Seat4" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, -64)
+
+[node name="Seat5" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, -32)
+
+[node name="Seat6" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, -32)
+
+[node name="Seat7" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, -32)
+
+[node name="Seat8" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, -32)
+
+[node name="Seat9" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 0)
+
+[node name="Seat10" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 0)
+
+[node name="Seat11" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 0)
+
+[node name="Seat12" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 0)
+
+[node name="Seat13" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 32)
+
+[node name="Seat14" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 32)
+
+[node name="Seat15" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 32)
+
+[node name="Seat16" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 32)
+
+[node name="Seat17" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 64)
+
+[node name="Seat18" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 64)
+
+[node name="Seat19" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 64)
+
+[node name="Seat20" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 64)
+
+[node name="Seat21" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 96)
+
+[node name="Seat22" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 96)
+
+[node name="Seat23" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 96)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bw6sv3r3fc7ig"]
 
 [ext_resource type="Script" path="res://Money.gd" id="1_mnd0a"]
-[ext_resource type="Texture2D" uid="uid://lrv8hd3o3eot" path="res://img/money.png" id="1_tarje"]
+[ext_resource type="Texture2D" uid="uid://djq5dm3emk7e8" path="res://img/money.png" id="1_tarje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ejf8"]
-size = Vector2(36, 22)
+size = Vector2(66, 30)
 
 [sub_resource type="Animation" id="Animation_7l610"]
 resource_name = "take"
@@ -32,18 +32,14 @@ script = ExtResource("1_mnd0a")
 
 [node name="Object" type="Node2D" parent="."]
 
-[node name="Sprite2" type="Sprite2D" parent="Object"]
-texture = ExtResource("1_tarje")
-vframes = 3
-
-[node name="Sprite" type="Sprite2D" parent="Object"]
-texture = ExtResource("1_tarje")
-vframes = 3
-
 [node name="Area2D" type="Area2D" parent="Object"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Area2D"]
 shape = SubResource("RectangleShape2D_7ejf8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_tarje")
+vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
