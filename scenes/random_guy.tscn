@@ -5,13 +5,18 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rari"]
 
-[node name="RandomGuy" type="CharacterBody2D"]
+[node name="RandomGuy" type="Node2D"]
 script = ExtResource("1_hvbot")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_3rari")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_q83qm")
 hframes = 4
 vframes = 4
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
