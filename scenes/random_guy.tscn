@@ -1,9 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3hu2ntwp5tdf"]
+[gd_scene load_steps=6 format=3 uid="uid://c3hu2ntwp5tdf"]
 
 [ext_resource type="Script" path="res://scenes/random_guy.gd" id="1_hvbot"]
 [ext_resource type="Texture2D" uid="uid://blkwaky2rp3gf" path="res://img/random_guys.png" id="2_kp4c0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rari"]
+
+[sub_resource type="Animation" id="Animation_rqb24"]
+resource_name = "Walk"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(0.287175, 1, 0.241484, 1, 0.233258),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ggsd"]
+_data = {
+"Walk": SubResource("Animation_rqb24")
+}
 
 [node name="RandomGuy" type="Node2D"]
 y_sort_enabled = true
@@ -19,6 +40,11 @@ y_sort_enabled = true
 position = Vector2(0, -6)
 texture = ExtResource("2_kp4c0")
 vframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0ggsd")
+}
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
