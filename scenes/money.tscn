@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bw6sv3r3fc7ig"]
 
-[ext_resource type="Script" path="res://Money.gd" id="1_mnd0a"]
+[ext_resource type="Script" path="res://scenes/money.gd" id="1_mnd0a"]
 [ext_resource type="Texture2D" uid="uid://djq5dm3emk7e8" path="res://img/money.png" id="1_tarje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ejf8"]
@@ -37,7 +37,7 @@ script = ExtResource("1_mnd0a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Area2D"]
 shape = SubResource("RectangleShape2D_7ejf8")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="Object"]
 texture = ExtResource("1_tarje")
 vframes = 8
 

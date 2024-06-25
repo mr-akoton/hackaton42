@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rari"]
 
 [node name="RandomGuy" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_hvbot")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -14,6 +15,7 @@ script = ExtResource("1_hvbot")
 shape = SubResource("RectangleShape2D_3rari")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -6)
 texture = ExtResource("2_kp4c0")
 vframes = 12

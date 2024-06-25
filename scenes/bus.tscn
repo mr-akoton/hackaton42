@@ -7,12 +7,13 @@
 [node name="Bus" type="Node2D"]
 script = ExtResource("1_jakce")
 
-[node name="ExitPoint" type="Marker2D" parent="."]
-position = Vector2(56, 240)
-
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(56, 128)
 texture = ExtResource("2_y77qp")
+
+[node name="ExitPoint" type="Marker2D" parent="."]
+position = Vector2(56, 240)
 
 [node name="Seats" type="Node2D" parent="."]
 position = Vector2(56, 128)

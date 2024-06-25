@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://blynwmy4d7a8"]
+[gd_scene load_steps=5 format=3 uid="uid://blynwmy4d7a8"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_hl0o4"]
+[ext_resource type="PackedScene" uid="uid://drcamssgrsoxp" path="res://scenes/bus.tscn" id="2_7xol1"]
+[ext_resource type="PackedScene" uid="uid://c3hu2ntwp5tdf" path="res://scenes/random_guy.tscn" id="3_rc3tf"]
+[ext_resource type="PackedScene" uid="uid://bw6sv3r3fc7ig" path="res://scenes/money.tscn" id="4_8ooo5"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_hl0o4")
+
+[node name="Bus" parent="." instance=ExtResource("2_7xol1")]
+
+[node name="Camera2D" type="Camera2D" parent="Bus"]
+position = Vector2(56, 128)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Guys" type="Node2D" parent="."]
+position = Vector2(69, 226)
+
+[node name="RandomGuy" parent="Guys" instance=ExtResource("3_rc3tf")]
+z_index = -1
+y_sort_enabled = false
+position = Vector2(-4, 2)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Money" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 15)
+
+[node name="Money2" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 45)
+value = 200
+
+[node name="Money3" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 75)
+value = 500
+
+[node name="Money4" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 105)
+value = 1000
+
+[node name="Money5" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 135)
+value = 2000
+
+[node name="Money6" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 165)
+value = 5000
+
+[node name="Money7" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 195)
+value = 10000
+
+[node name="Money8" parent="UI" instance=ExtResource("4_8ooo5")]
+position = Vector2(-36, 225)
+value = 20000
