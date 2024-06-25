@@ -1,5 +1,6 @@
 extends Node
 
+signal send_money()
 
 @onready var container = preload("res://scenes/money_container.tscn")
 @onready var money_count : int = 0
@@ -25,3 +26,11 @@ func add_money_to_deck(value: int) -> void:
 		get_node("CanvasLayer/HBoxContainer").add_child(money)
 		money.update_sprite(value)
 	print(Global.money_change)
+
+
+func _on_send_pressed():
+	send_money.emit()
+
+
+func _on_remove_pressed():
+	clear_money_deck()

@@ -6,7 +6,7 @@ signal be_targeted(Node2D)
 @onready var is_waiting_changes: bool = true
 @onready var is_clickable: bool = false
 var money: Array[int] = [0, 0]
-var money_changes: int
+var expected_money: int
 
 
 func get_random_index() -> int:
@@ -26,13 +26,19 @@ func get_money() -> void:
 	money[0] = Global.BIG_MONEY[get_random_index()]
 	if money[0] == 500 or randi() % 2 == 0:
 		money[1] = Global.LIL_MONEY.pick_random()
-	money_changes = money[0] + money[1] - 600
-	if money_changes == 0:
+	expected_money = money[0] + money[1] - 600
+
+
+func receive_money(value: int) -> bool:
+	if value < expected_money:
+		return false
+	else:
 		is_waiting_changes = false
+		return true
 
 
 func _ready():
-	sprite.frame = randi_range(0, 12)
+	sprite.frame = randi_range(0, 11)
 	get_money()
 
 
@@ -42,7 +48,8 @@ func _process(_delta):
 
 
 func _on_area_2d_mouse_entered():
-	is_clickable = true
+	if is_waiting_changes == true:
+		is_clickable = true
 
 
 func _on_area_2d_mouse_exited():
