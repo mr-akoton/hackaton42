@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1f2o66eqopt8"]
+
+[ext_resource type="Script" path="res://money_container.gd" id="1_q0ru0"]
+[ext_resource type="Texture2D" uid="uid://djq5dm3emk7e8" path="res://img/money.png" id="2_k7805"]
+
+[node name="Container" type="Container"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q0ru0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_k7805")
+vframes = 8

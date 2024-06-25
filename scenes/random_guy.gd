@@ -1,13 +1,12 @@
 extends Node2D
 
-signal show_money(money: Array[int])
+signal be_targeted(Node2D)
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var is_waiting_changes: bool = true
 @onready var is_clickable: bool = false
 var money: Array[int] = [0, 0]
 var money_changes: int
-
 
 
 func get_random_index() -> int:
@@ -39,7 +38,7 @@ func _ready():
 
 func _process(_delta):
 	if is_clickable and Input.is_action_just_pressed("left_click"):
-		show_money.emit(money)
+		be_targeted.emit(self)
 
 
 func _on_area_2d_mouse_entered():

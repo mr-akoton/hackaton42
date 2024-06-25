@@ -1,10 +1,18 @@
 extends Node2D
 
+signal clicked_money(action: String, value: int)
+
 @onready var sprite = $Object/Sprite
 @onready var animation_player = $AnimationPlayer
+@onready var is_clickable: bool = false
 @export var value: int = 100
 
+
 func update_sprite() -> void:
+	if value == 0:
+		sprite.visible = false
+	else:
+		sprite.visible = true
 	if value <= 100:
 		sprite.frame = 0
 	elif value <= 200:
@@ -22,13 +30,27 @@ func update_sprite() -> void:
 	else:
 		sprite.frame = 7
 
+
+func add_money_to_change() -> void:
+	clicked_money.emit("add", value)
+
+
 func _ready():
 	update_sprite()
 
 
+func _process(_delta):
+	if Input.is_action_just_pressed("left_click") and is_clickable:
+		add_money_to_change()
+
+
 func _on_area_2d_mouse_entered():
-	animation_player.play("take")
+	if self.is_in_group("player"):
+		animation_player.play("take")
+	is_clickable = true
 
 
 func _on_area_2d_mouse_exited():
-	animation_player.play_backwards("take")
+	if self.is_in_group("player"):
+		animation_player.play_backwards("take")
+	is_clickable = false
