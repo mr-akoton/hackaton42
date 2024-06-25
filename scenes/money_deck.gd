@@ -4,6 +4,8 @@ signal send_money()
 
 @onready var container = preload("res://scenes/money_container.tscn")
 @onready var money_count : int = 0
+@onready var minute = $CanvasLayer/Timer/Minute
+@onready var second = $CanvasLayer/Timer/Second
 
 
 func clear_money_deck() -> void:
@@ -28,9 +30,16 @@ func add_money_to_deck(value: int) -> void:
 	print(Global.money_change)
 
 
+func update_timer_text(time: int):
+	var minu = ceil(time) / 60
+	var sec = time % 60
+	minute.text = "%02d" % minu
+	second.text = "%02d" % sec
+
+
 func _on_send_pressed():
 	send_money.emit()
 
 
-func _on_remove_pressed():
+func _on_clear_pressed():
 	clear_money_deck()

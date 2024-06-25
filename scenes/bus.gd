@@ -6,10 +6,10 @@ var paths_list: Array[Node]
 
 
 func search_seat(guy: Node2D):
+	update_paths()
 	var chosen_seat = paths_list.pick_random()
 	var chosen_path: Node = get_node(String(chosen_seat.get_path()) + "/PathFollow2D")
 	guy.path_follow = chosen_path
-	update_paths()
 
 
 func is_free(path: Path2D) -> bool:

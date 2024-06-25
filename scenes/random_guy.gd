@@ -9,6 +9,8 @@ signal be_targeted(Node2D)
 @onready var path_follow: PathFollow2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var speed: float = randf_range(50, 55)
+@onready var is_target: bool = false
+@onready var cursor: Sprite2D = $Object/Cursor
 
 var money: Array[int] = [0, 0]
 var expected_money: int
@@ -26,6 +28,13 @@ func get_random_index() -> int:
 	else:
 		return 5
 
+
+func toggle_cursor():
+	if is_target:
+		cursor.visible = false
+	else:
+		cursor.visible = true
+	is_target = not is_target
 
 func enter_path() -> void:
 	path_follow.add_child(self)
@@ -65,6 +74,8 @@ func _process(delta):
 	else:
 		if is_clickable and Input.is_action_just_pressed("left_click"):
 			be_targeted.emit(self)
+	if is_target:
+		animation_player.play("idle")
 
 
 func _on_area_2d_mouse_entered():
