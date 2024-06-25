@@ -5,7 +5,6 @@ extends Node2D
 var paths_list: Array[Node]
 
 
-
 func search_seat(guy: Node2D):
 	var chosen_seat = paths_list.pick_random()
 	var chosen_path: Node = get_node(String(chosen_seat.get_path()) + "/PathFollow2D")

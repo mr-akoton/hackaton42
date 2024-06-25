@@ -7,6 +7,9 @@ signal be_targeted(Node2D)
 @onready var is_clickable: bool = false
 @onready var is_moving: bool = true
 @onready var path_follow: PathFollow2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var speed: float = randf_range(50, 55)
+
 var money: Array[int] = [0, 0]
 var expected_money: int
 
@@ -28,12 +31,12 @@ func enter_path() -> void:
 	path_follow.add_child(self)
 
 
-func move() -> void:
+func move(delta) -> void:
 	var last_progress = path_follow.progress
-	path_follow.progress += 1
+	path_follow.progress += speed * delta
+	animation_player.play("Walk")
 	if path_follow.progress == last_progress:
 		is_moving = false
-		print("hehe")
 
 
 func get_money() -> void:
@@ -56,9 +59,9 @@ func _ready():
 	get_money()
 
 
-func _process(_delta):
+func _process(delta):
 	if is_moving and path_follow:
-		move()
+		move(delta)
 	else:
 		if is_clickable and Input.is_action_just_pressed("left_click"):
 			be_targeted.emit(self)
