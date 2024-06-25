@@ -7,6 +7,7 @@
 size = Vector2(12, 12)
 
 [node name="Seat" type="Node2D"]
+z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_hfvki")
 

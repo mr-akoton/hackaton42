@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://drcamssgrsoxp"]
+
+[ext_resource type="Script" path="res://scenes/bus.gd" id="1_jakce"]
+[ext_resource type="Texture2D" uid="uid://chcd1ftdagaov" path="res://img/floor.png" id="2_y77qp"]
+[ext_resource type="PackedScene" uid="uid://bvg0p7d35hns6" path="res://scenes/seat.tscn" id="3_fuyc8"]
+
+[node name="Bus" type="Node2D"]
+script = ExtResource("1_jakce")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(56, 128)
+texture = ExtResource("2_y77qp")
+
+[node name="ExitPoint" type="Marker2D" parent="."]
+position = Vector2(56, 240)
+
+[node name="Seats" type="Node2D" parent="."]
+position = Vector2(56, 128)
+
+[node name="Seat" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, -64)
+
+[node name="Seat2" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, -64)
+
+[node name="Seat3" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, -64)
+
+[node name="Seat4" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, -64)
+
+[node name="Seat5" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, -32)
+
+[node name="Seat6" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, -32)
+
+[node name="Seat7" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, -32)
+
+[node name="Seat8" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, -32)
+
+[node name="Seat9" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 0)
+
+[node name="Seat10" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 0)
+
+[node name="Seat11" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 0)
+
+[node name="Seat12" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 0)
+
+[node name="Seat13" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 32)
+
+[node name="Seat14" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 32)
+
+[node name="Seat15" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 32)
+
+[node name="Seat16" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 32)
+
+[node name="Seat17" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 64)
+
+[node name="Seat18" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 64)
+
+[node name="Seat19" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(16, 64)
+
+[node name="Seat20" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 64)
+
+[node name="Seat21" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-32, 96)
+
+[node name="Seat22" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(-16, 96)
+
+[node name="Seat23" parent="Seats" instance=ExtResource("3_fuyc8")]
+position = Vector2(32, 96)

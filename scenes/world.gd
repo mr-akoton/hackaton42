@@ -1,10 +1,21 @@
 extends Node2D
 
+@onready var random_guy = preload("res://scenes/random_guy.tscn")
 @onready var guys_list: Array[Node]
 @onready var big_money: Node2D = $UI/GuyMoney/BigMoney
 @onready var lil_money: Node2D = $UI/GuyMoney/LilMoney
 @onready var money_deck: Node = $UI/MoneyDeck
+@onready var bus = $Bus
 var targeted_guy: Node2D = null
+
+
+func generate_random_guy() -> void:
+	var number: int = randi_range(5, 10)
+	for i in number:
+		var guy = random_guy.instantiate()
+		bus.search_seat(guy)
+		guy.enter_path()
+		guys_list.append(guy) 
 
 
 func get_target(target: Node2D) -> void:
@@ -36,7 +47,7 @@ func update_money_deck(action: String, value: int) -> void:
 func _ready() -> void:
 	lil_money.visible = false
 	big_money.visible = false
-	guys_list = get_node("Guys").get_children()
+	generate_random_guy()
 	for guy in guys_list:
 		guy.connect("be_targeted", get_target)
 	

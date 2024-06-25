@@ -5,6 +5,8 @@ signal be_targeted(Node2D)
 @onready var sprite: Sprite2D = $Sprite
 @onready var is_waiting_changes: bool = true
 @onready var is_clickable: bool = false
+@onready var is_moving: bool = true
+@onready var path_follow: PathFollow2D
 var money: Array[int] = [0, 0]
 var expected_money: int
 
@@ -20,6 +22,18 @@ func get_random_index() -> int:
 		return randi_range(3, 4)
 	else:
 		return 5
+
+
+func enter_path() -> void:
+	path_follow.add_child(self)
+
+
+func move() -> void:
+	var last_progress = path_follow.progress
+	path_follow.progress += 1
+	if path_follow.progress == last_progress:
+		is_moving = false
+		print("hehe")
 
 
 func get_money() -> void:
@@ -43,8 +57,11 @@ func _ready():
 
 
 func _process(_delta):
-	if is_clickable and Input.is_action_just_pressed("left_click"):
-		be_targeted.emit(self)
+	if is_moving and path_follow:
+		move()
+	else:
+		if is_clickable and Input.is_action_just_pressed("left_click"):
+			be_targeted.emit(self)
 
 
 func _on_area_2d_mouse_entered():

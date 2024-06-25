@@ -1,21 +1,161 @@
-[gd_scene load_steps=4 format=3 uid="uid://drcamssgrsoxp"]
+[gd_scene load_steps=27 format=3 uid="uid://bklu2oe08belt"]
 
 [ext_resource type="Script" path="res://scenes/bus.gd" id="1_jakce"]
 [ext_resource type="Texture2D" uid="uid://chcd1ftdagaov" path="res://img/floor.png" id="2_y77qp"]
 [ext_resource type="PackedScene" uid="uid://bvg0p7d35hns6" path="res://scenes/seat.tscn" id="3_fuyc8"]
 
+[sub_resource type="Curve2D" id="Curve2D_sqkh3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 56, 0, 0, 0, 0, 40, 56)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_udw8w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 56, 0, 0, 0, 0, 24, 56)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_141n2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 56, 0, 0, 0, 0, 72, 56)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_qgpdn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 56, 0, 0, 0, 0, 88, 56)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ia3ej"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 88, 0, 0, 0, 0, 40, 88)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_bjfnd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 88, 0, 0, 0, 0, 24, 88)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_lahoq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 88, 0, 0, 0, 0, 72, 88)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_70xg1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 88, 0, 0, 0, 0, 88, 88)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_xk2a4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 120, 0, 0, 0, 0, 40, 120)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2kjnj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 120, 0, 0, 0, 0, 24, 120)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_j5uvg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 120, 0, 0, 0, 0, 72, 120)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_u5p06"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 120, 0, 0, 0, 0, 88, 120)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_nikoc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 40, 152)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_jmage"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 24, 152)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_4ejn0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 72, 152)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_dxwts"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 88, 152)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_tw342"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 40, 184)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_242xf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 24, 184)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2e0ky"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 72, 184)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_6ifgv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 88, 184)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_fejeu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 216, 0, 0, 0, 0, 40, 216)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_1q65p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 216, 0, 0, 0, 0, 24, 216)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_6bpbf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 240, 0, 0, 0, 0, 56, 216, 0, 0, 0, 0, 88, 216)
+}
+point_count = 3
+
 [node name="Bus" type="Node2D"]
 script = ExtResource("1_jakce")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(56, 128)
+z_index = -1
+position = Vector2(56, 136)
 texture = ExtResource("2_y77qp")
 
 [node name="ExitPoint" type="Marker2D" parent="."]
 position = Vector2(56, 240)
 
 [node name="Seats" type="Node2D" parent="."]
-position = Vector2(56, 128)
+position = Vector2(56, 136)
+metadata/_edit_group_ = true
 
 [node name="Seat" parent="Seats" instance=ExtResource("3_fuyc8")]
 position = Vector2(-32, -64)
@@ -85,3 +225,191 @@ position = Vector2(-16, 96)
 
 [node name="Seat23" parent="Seats" instance=ExtResource("3_fuyc8")]
 position = Vector2(32, 96)
+
+[node name="Paths" type="Node2D" parent="."]
+position = Vector2(0, 8)
+metadata/_edit_group_ = true
+
+[node name="Path2D" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_sqkh3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_udw8w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D3" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_141n2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D3"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D4" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_qgpdn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D4"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D5" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_ia3ej")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D5"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D6" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_bjfnd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D6"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D7" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_lahoq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D7"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D8" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_70xg1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D8"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D9" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_xk2a4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D9"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D10" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_2kjnj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D10"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D11" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_j5uvg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D11"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D12" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_u5p06")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D12"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D13" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_nikoc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D13"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D14" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_jmage")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D14"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D15" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_4ejn0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D15"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D16" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_dxwts")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D16"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D17" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_tw342")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D17"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D18" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_242xf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D18"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D19" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_2e0ky")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D19"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D20" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_6ifgv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D20"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D21" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_fejeu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D21"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D22" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_1q65p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D22"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
+
+[node name="Path2D23" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_6bpbf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D23"]
+position = Vector2(56, 240)
+rotates = false
+loop = false
